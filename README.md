@@ -44,6 +44,16 @@ And for last, you must set source. for now these sources are static but i will f
 
 ## Usage/Examples
 
+At first generate prisma model
+```bash
+  npm run db:generate
+```
+
+And then push it into your database
+```bash
+  npm run db:push
+```
+
 For runing in dev mode
 ```bash
   npm run dev
