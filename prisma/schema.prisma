@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model DevTo {
+  id         String     @id @default(auto()) @map("_id") @db.ObjectId
+  post_id    Int
+  createdAt  DateTime
+
+  @@unique([post_id])
+}
+
+model Medium {
+  id           String    @id @default(auto()) @map("_id") @db.ObjectId
+  post_id      String
+  createdAt    DateTime
+
+  @@unique([post_id])
+}
+
+model Science {
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  post_id       String
+  createdAt     DateTime
+
+  @@unique([post_id])
+}
+
+model ScienceDaily {
+  id                String    @id @default(auto()) @map("_id") @db.ObjectId
+  post_id           String
+  createdAt         DateTime
+
+  @@unique([post_id])
+}
